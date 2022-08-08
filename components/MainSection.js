@@ -35,7 +35,7 @@ const MainSection = () => {
 
                             <MainArt/>
                         </div> :
-                        <div className="w-full xl:hidden stroke-2 p-3">
+                        <div className="w-full xl:hidden stroke-[1px] p-3">
                             <MainVerticalArt/>
                         </div>
                 }

@@ -37,7 +37,7 @@ const links = {
 
 const Social = () => {
     return (
-        <div className="fixed flex flex-col bottom-5 left-5 space-y-2 z-50">
+        <div className="fixed flex flex-col bottom-5 left-5 space-y-2 z-50 xl:visible hidden">
             {Object.keys(links).map((item, index) => {
                 let CustomTag = `${links[item]['title']}`
                 return < SocialLink key={item} delay={0.05 * index}

@@ -18,8 +18,8 @@ const AboutSection = () => {
 
     return (
         <Section className="relative">
-            <Center>
-                <div className="w-1/2 flex flex-row justify-end p-10 " ref={ref}>
+            <Center className="flex-col xl:flex-row">
+                <div className="xl:w-1/2 flex flex-row justify-center xl:justify-end p-10 " ref={ref}>
 
                     <motion.div className="flex items-center justify-end w-2/3 h-1/5 overflow-hidden"
                                 style={{
@@ -38,9 +38,9 @@ const AboutSection = () => {
                         opacity: isInView ? 1 : 0,
                         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                     }}
-                    className="w-1/2 space-y-5 p-10">
+                    className="xl:w-1/2 space-y-5 p-10">
                     <h1 className="font-orbitron text-3xl">Who am I?</h1>
-                    <p className="w-1/2 text-justify">I am a self taught front end developer with a strong background in graphic design. I love working hard and long hour to get the result i desire. it does not matter what the job is. I am a fast learner and always eager to learn new thing as I learnt all of my skills just through perseverance. I am so passionate about my clients projects as if they are my own and try to do the best work I would ever can</p>
+                    <p className="xl:w-1/2 text-justify">I am a self taught front end developer with a strong background in graphic design. I love working hard and long hour to get the result i desire. it does not matter what the job is. I am a fast learner and always eager to learn new thing as I learnt all of my skills just through perseverance. I am so passionate about my clients projects as if they are my own and try to do the best work I would ever can</p>
                 </motion.div>
             </Center>
             <Center className="absolute bottom-7 right-8 flex items-center cursor-pointer">
