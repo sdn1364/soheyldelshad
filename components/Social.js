@@ -15,22 +15,22 @@ const links = {
     },
     youtube: {
         title: 'Youtube',
-        to: 'https//www.youtube.com/channel/UCsQOFUItIkE5KBu1opO_rrg',
+        to: 'https://www.youtube.com/channel/UCsQOFUItIkE5KBu1opO_rrg',
         icon: <Youtube/>
     },
     dribbble:{
         title: 'Dribbble',
-        to: '',
+        to: 'https://dribbble.com/sdn1364',
         icon: <Dribbble/>
     },
-    behance:{
+/*    behance:{
         title: 'Behance',
         to: '',
         icon: <Behance/>
-    },
+    },*/
     github:{
         title: 'Github',
-        to: '',
+        to: 'https://github.com/sdn1364',
         icon: <Github/>
     }
 }
