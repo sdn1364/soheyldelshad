@@ -21,8 +21,6 @@ import FlyingLogo from "./template/FlyingLogo";
 const StackSection = () =>{
     return(
         <Section className="relative">
-
-
             <Center>
                 <motion.div className="space-y-5 w-2/3">
                     <h1 className="font-orbitron text-center text-3xl mb-5">These are the tech I mostly use in my projects.</h1>

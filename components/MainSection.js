@@ -1,37 +1,64 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Section from "./template/section";
 import Center from "./template/center";
-import MainArt from "./art/main";
+import MainArt from "./art/mainArt";
+import MainVerticalArt from "./art/MainVertical";
 import {motion} from "framer-motion";
 import DownArrow from "./template/DownArrow";
 
-const MainSection = ()=>{
-    return(
+const MainSection = () => {
+    const [width, setWindowWidth] = useState(0)
+
+    useEffect(
+        () => {
+
+            updateDimensions();
+            window.addEventListener('resize', updateDimensions);
+
+            return () => {
+                window.removeEventListener('resize', updateDimensions);
+            }
+        },
+        []
+    )
+    const updateDimensions = () => {
+        const width = window.innerWidth
+        setWindowWidth(width)
+    }
+
+
+    return (
         <Section className="relative overflow-hidden">
             <Center>
-                <div className="w-full stroke-2 text-neutral-300 dark:text-neutral-400 p-36 ">
-                    <MainArt/>
-                </div>
-                <div className="absolute flex-col w-fit text-gray-900 dark:text-white">
-                    <motion.h3 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, stiffness: 5, delay: 0.5}} className="font-bold text-3xl w-full text-neutral-500">
+                {
+                    width > 1024 ? <div className="w-full xl:visible stroke-2 p-36 ">
+
+                            <MainArt/>
+                        </div> :
+                        <div className="w-full xl:hidden stroke-2 p-3">
+                            <MainVerticalArt/>
+                        </div>
+                }
+
+                <div className="absolute -mt-9 xl:mt-0 flex-col w-fit text-gray-900 dark:text-white">
+                    <motion.h3 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, stiffness: 5, delay: 0.5}} className="font-bold text-md xl:text-3xl w-full text-neutral-500">
                         I am
                     </motion.h3>
-                    <motion.h1 className="font-orbitron text-8xl tracking-[1rem] text-justify"
+                    <motion.h1 className="font-orbitron text-6xl md:text-8xl tracking-[0.47rem] md:tracking-[1rem]  text-center xl:text-justify"
                                initial={{opacity: 0, y: -10}}
                                animate={{opacity: 1, y: 0}}
                                transition={{duration: 1, stiffness: 5}}
-
                     >
                         SOHEYL
                     </motion.h1>
-                    <motion.h2 className="font-orbitron text-8xl text-justify"
+                    <motion.h2 className="font-orbitron text-6xl md:text-8xl text-justify text-center xl:text-justify"
                                initial={{opacity: 0, y: 10}}
                                animate={{opacity: 1, y: 0}}
                                transition={{duration: 1, stiffness: 5, delay: 0.005}}
                     >
                         DELSHAD
                     </motion.h2>
-                    <motion.h3 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, stiffness: 5, delay: 1}} className="font-bold text-3xl justify-self-end w-full text-right  text-neutral-500">
+                    <motion.h3 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1, stiffness: 5, delay: 1}} className="font-bold text-md xl:text-3xl justify-self-end w-full text-right  text-neutral-500">
                         a Web Developer
                     </motion.h3>
                 </div>
@@ -42,8 +69,8 @@ const MainSection = ()=>{
                 opacity: 0
             }}
                         animate={{
-                            x:0,
-                            opacity:1
+                            x: 0,
+                            opacity: 1
                         }}
                         transition={{
                             duration: 1,
